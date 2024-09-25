@@ -1,0 +1,35 @@
+.btn {
+  @apply text-[14px] cursor-pointer hover:text-blue transition;
+}
+
+.sub_menu {
+  @apply min-w-[100px] w-full absolute h-auto bg-[#fff] hidden top-[20px];
+}
+
+.list {
+  @apply relative flex justify-center
+}
+
+.list:hover .sub_menu {
+  @apply bg-[black] block;
+}
+
+.list:hover .sub_menu ul {
+  @apply bg-[#000000] flex flex-col items-center;
+}
+
+.sub_list {
+  @apply text-[#fff] text-center text-[14px] w-full py-[10px] cursor-pointer;
+}
+
+.sub_list:hover {
+  @apply bg-blue transition;
+}
+
+.sub_list:hover .sub_btn {
+  @apply text-white;
+}
+
+.sub_btn {
+  @apply text-[14px];
+}

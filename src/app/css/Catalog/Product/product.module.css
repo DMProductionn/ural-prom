@@ -1,0 +1,6 @@
+.product {
+  -webkit-box-shadow: -1px -2px 16px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: -1px -2px 16px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: -1px -2px 16px 0px rgba(34, 60, 80, 0.2);
+  @apply h-[305px] min-w-[270px] flex flex-col items-center p-[30px] pt-[20px] cursor-pointer;
+}

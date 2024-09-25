@@ -1,0 +1,14 @@
+.catalog {
+  @apply flex overflow-x-auto overflow-y-hidden w-full mt-[40px] gap-[30px] px-[10px] py-[10px];
+}
+
+.catalog::-webkit-scrollbar {
+  width: 12px; /* Ширина скроллбара */
+  height: 5px;
+}
+
+.catalog::-webkit-scrollbar-thumb {
+  background: #0C76D8; /* Цвет ползунка */
+  border-radius: 10px; /* Скругление углов ползунка */
+}
+

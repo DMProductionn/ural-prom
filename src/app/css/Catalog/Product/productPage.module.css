@@ -1,0 +1,9 @@
+.img_block {
+  @apply  w-full max-w-[350px] flex justify-center mt-[20px] h-auto;
+}
+
+.text_block {
+  @apply max-w-[500px];
+}
+
+

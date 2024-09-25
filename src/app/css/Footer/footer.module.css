@@ -1,0 +1,28 @@
+.wrapper {
+  @apply max-w-[1200px] w-full px-[15px] mx-auto flex flex-wrap gap-[20px] justify-between items-center mt-[30px];
+}
+
+.nav ul {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    @apply justify-center;
+  }
+}
+
+
+@media only screen and (max-width: 460px) {
+  .nav ul > li {
+    @apply text-center text-[12px];
+  }
+
+  .nav ul {
+    @apply flex-wrap justify-center gap-[12px]
+  }
+
+  .wrapper {
+    @apply mt-[0px]
+  }
+}

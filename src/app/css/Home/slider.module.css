@@ -1,0 +1,12 @@
+.slider {
+  text-align: center;
+  margin: 20px;
+  @apply flex flex-col items-center mb-[160px];
+}
+
+.slider img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+

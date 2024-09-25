@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "Product-1",
+    "img": "img",
+    "subcategories": [
+      {
+        "id": 5,
+        "name": "SubCategory-2",
+        "parent_category":
+          {
+            "id": 3,
+            "name": "ParentCategory-1"
+          }
+      },
+
+      {
+        "id": 4,
+        "name": "SubCategory-1",
+        "parent_category":
+          {
+            "id": 3,
+            "name": "ParentCategory-1"
+          }
+      }
+
+    ]
+  }
+]
