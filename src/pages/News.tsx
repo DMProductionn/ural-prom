@@ -15,7 +15,7 @@ const News = () => {
           <p>{newsItem?.text}</p>
         </div>
         <div className="flex justify-center">
-          <img className={style.news_img} src="/img/others/test.jpg" alt="news" />
+          <img className={style.news_img} src={newsItem.img} alt="news" />
         </div>
       </section>
       <Helmet>

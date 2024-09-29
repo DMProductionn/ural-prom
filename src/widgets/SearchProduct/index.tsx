@@ -26,7 +26,6 @@ const SearchProduct = () => {
       clearTimeout(id);
     };
   }, [searchValue]);
-  console.log(succes);
   
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {

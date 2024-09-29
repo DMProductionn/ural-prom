@@ -10,7 +10,6 @@ const Header = () => {
   const [openNav, setOpenNav] = useState(false);
   const location = useLocation();
 
-  console.log(location);
 
   useEffect(() => {
     if (active) {
