@@ -4,7 +4,7 @@
 
 .catalog::-webkit-scrollbar {
   width: 12px; /* Ширина скроллбара */
-  height: 5px;
+  height: 7px;
 }
 
 .catalog::-webkit-scrollbar-thumb {

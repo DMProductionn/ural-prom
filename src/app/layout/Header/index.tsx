@@ -79,7 +79,7 @@ const Header = () => {
         </nav>
         <div className='flex items-center gap-[15px]'>
           <SearchProduct />
-          <a href='tel:8 (343) 345-94-84' className="font-bold max-w-[130px] w-full">8 (343) 345-94-84</a>
+          <a href='tel:8 (343) 345-94-84' className="font-bold w-full">8 (343) 345-94-84</a>
         </div>
       </header>
     </>

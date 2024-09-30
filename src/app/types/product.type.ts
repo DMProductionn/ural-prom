@@ -15,6 +15,7 @@ export type TypeProduct = {
 };
 
 export type TypeSearchProduct = {
+  id: string
   name: string
   img: string
 };

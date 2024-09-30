@@ -22,10 +22,6 @@ const News = () => {
   const handlePageClick = (data: { selected: number }) => {
     setCurrentPage(data.selected);
   };
-
-  const handleNews = ({newsItem}: any) => {
-    localStorage.setItem('news', JSON.stringify(newsItem));
-  }
   
 
   return (
@@ -33,7 +29,7 @@ const News = () => {
       <h3 className="text-[30px] text-center font-black">Новости</h3>
       <section id='news' className={style.news}>
         {currentNews?.map((newsItem: INews) => (
-          <div onClick={() => handleNews({newsItem})} key={newsItem.id} className="w-full max-w-[340px]">
+          <div key={newsItem.id} className="w-full max-w-[340px]">
             <div
               onClick={() => navigate(`/news/${newsItem.id}`)}
               className="w-full max-w-[340px] h-[260px] rounded-[8px] overflow-hidden relative cursor-pointer">

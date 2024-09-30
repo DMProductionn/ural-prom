@@ -12,6 +12,7 @@ const initialState: newsState = {
     name: '',
     title: '',
     text: '',
+    img: '',
     created_at: 0
   }
 }

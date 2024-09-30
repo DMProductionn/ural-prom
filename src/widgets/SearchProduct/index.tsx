@@ -8,6 +8,7 @@ const SearchProduct = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [product, setProduct] = useState<TypeSearchProduct[]>([]);
   const [succes, setIsSuccess] = useState<boolean>(false);
+  const [isFocused, setIsFocused] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const SearchProduct = () => {
         getSearchProduct(searchValue).then((res) => {
           setProduct(res);
           setIsSuccess(true);
-        })
+        });
       } else {
         setProduct([]);
       }
@@ -26,20 +27,14 @@ const SearchProduct = () => {
       clearTimeout(id);
     };
   }, [searchValue]);
-  
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
-  const handleClick = (name: string, img: string) => {
-    const product = {
-      name: name,
-      img: img,
-    };
+  const handleClick = (id: string) => {
     setSearchValue('');
-    localStorage.setItem('product', JSON.stringify(product));
-    navigate(`/catalog/${product.name}`);
+    navigate(`/catalog/product/${id}`);
   };
 
   return (
@@ -50,21 +45,31 @@ const SearchProduct = () => {
         placeholder="Поиск по товарам..."
         value={searchValue}
         onChange={onChangeSearch}
+        onFocus={() =>
+          setTimeout(() => {
+            setIsFocused(true);
+          }, 100)
+        }
+        onBlur={() =>
+          setTimeout(() => {
+            setIsFocused(false);
+          }, 100)
+        }
       />
       <div
         className={`${style.dropdown} absolute top-[32px] max-w-[400px] w-full max-h-[200px] overflow-auto bg-[white]`}>
-        {product.length === 0 && searchValue && succes ? (
+        {product.length === 0 && searchValue && succes && isFocused ? (
           <div
             className={`${style.dropdown} bg-[#3B3B3B] text-white pl-[10px] text-[13px] h-[30px] flex items-center`}>
             <p>Нет результатов</p>
           </div>
         ) : (
-          searchValue &&
+          searchValue && isFocused && 
           product.map((product) => (
             <div
-              onClick={() => handleClick(product.name, product.img)}
+              onClick={() => handleClick(product.id)}
               key={product.name}
-              className={`${style.dropdown_product} bg-[black] hover:bg-blue transition cursor-pointer max-w-[400px] w-full h-[60px] text-white pl-[10px] flex items-center gap-[40px]`}>
+              className={`${style.dropdown_product} bg-[black] hover:bg-blue transition overflow-hidden cursor-pointer max-w-[400px] w-full h-[60px] text-white pl-[10px] flex items-center gap-[40px]`}>
               <img className="w-[40px] h-[40px] object-cover" src={product.img} alt="" />
               <p>{product.name}</p>
             </div>

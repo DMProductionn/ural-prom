@@ -14,13 +14,9 @@ const Catalog = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [parentCategories, setParentCategories] = useState<TypeParent[]>([]);
-
   const [product, setProduct] = useState<TypeProduct[] | null>([]);
   const { data: productAll } = useGetProduct();
-
   const [loading, setLoading] = useState(false);
-
-  console.log(productAll);
 
   useEffect(() => {
     if (productAll) {
@@ -36,6 +32,31 @@ const Catalog = () => {
       setParentCategories(uniqueParentCategories);
     }
   }, [productAll]);
+
+  // Mouse wheel scroll handler
+  const handleWheel = (event: WheelEvent) => {
+    // Disable scrolling if there are fewer than 3 products
+    if (product && product.length <= 3) {
+      return; // Do nothing
+    }
+
+    if (catalogRef.current) {
+      event.preventDefault(); 
+      catalogRef.current.scrollLeft += event.deltaY; 
+    }
+  };
+
+  useEffect(() => {
+    const catalogElement = catalogRef.current;
+    if (catalogElement) {
+      catalogElement.addEventListener('wheel', handleWheel);
+    }
+    return () => {
+      if (catalogElement) {
+        catalogElement.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [product]); 
 
   const handleMouseDown = (event: MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -84,8 +105,8 @@ const Catalog = () => {
         {loading ? (
           <div className='w-full h-[325px] flex items-center justify-center'><Loader /></div>
         ) : (
-          product?.map((product) => {
-            return <Product key={product.id} name={product.name} img={product.img} />;
+          product?.map((product: TypeProduct) => {
+            return <Product key={product.id} product={product} />;
           })
         )}
       </div>

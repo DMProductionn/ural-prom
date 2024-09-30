@@ -6,6 +6,7 @@ import News from '../../pages/News';
 import Product from '../../pages/Product';
 
 function App() {
+  
   return (
     <>
       {
@@ -13,8 +14,8 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='/catalog' element={<Catalog />} />
-            <Route path='/catalog/:product' element={<Product />} />
-            <Route path='/news/:title' element={<News />} />
+            <Route path='/catalog/product/:productId' element={<Product />} />
+            <Route path='/news/:newsId' element={<News />} />
             <Route path="*" element={<div>404</div>} />
           </Route>
         </Routes>

@@ -4,3 +4,10 @@
   box-shadow: -1px -2px 16px 0px rgba(34, 60, 80, 0.2);
   @apply h-[305px] min-w-[270px] flex flex-col items-center p-[30px] pt-[20px] cursor-pointer;
 }
+
+.productText {
+  font-size: clamp(14px, 2vw, 17px); 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}

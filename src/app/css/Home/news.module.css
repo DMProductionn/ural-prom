@@ -52,7 +52,7 @@
 }
 
 .section_news_title {
-  @apply flex justify-between flex-wrap;
+  @apply flex justify-center flex-wrap;
 }
 
 @media only screen and (max-width: 1130px) {
