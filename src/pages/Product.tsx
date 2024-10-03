@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Loader from '../shared/Loader';
 import useGetProductDetail from '../app/hooks/Product/useGetProductDetail';
+import { Helmet } from 'react-helmet';
 
 const Product = () => {
   const { productId } = useParams();
@@ -22,6 +23,10 @@ const Product = () => {
           {productData?.description && <p className='max-w-[600px] w-full mx-auto break-words'>{productData?.description}</p>}
         </>
       )}
+      <Helmet>
+        <title>{productData?.name}</title>
+        <meta name='description' content={productData?.description} />
+      </Helmet>
     </div>
   );
 };
