@@ -45,7 +45,7 @@ const Header = () => {
           className={
             active ? `${style.burger_aside} ${style.burger_aside_active}` : style.burger_aside
           }></div>
-        <div>Logo</div>
+        <Link to='/'><img className='w-[250px]' src="/img/Logo/Logo.png" alt="logo" /></Link>
         <nav className={!openNav || active ? `${style.nav}` : `${style.nav_none}`}>
           <ul className="flex gap-[30px]">
             <li
