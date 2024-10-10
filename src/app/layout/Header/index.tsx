@@ -10,7 +10,6 @@ const Header = () => {
   const [openNav, setOpenNav] = useState(false);
   const location = useLocation();
 
-
   useEffect(() => {
     if (active) {
       document.body.style.overflow = 'hidden';
@@ -29,7 +28,7 @@ const Header = () => {
   return (
     <>
       <Element name="header"></Element>
-      <header className="max-w-[1200px] w-full px-[15px] mx-auto flex justify-between items-center mt-[40px] h-[40px] mb-[60px] relative">
+      <header className="max-w-[1200px] gap-[15px] w-full px-[15px] mx-auto flex justify-between items-center mt-[40px] h-[40px] mb-[60px] relative">
         <div className={style.burger_wrapper}>
           <nav
             onClick={() => setActive(!active)}
@@ -45,7 +44,9 @@ const Header = () => {
           className={
             active ? `${style.burger_aside} ${style.burger_aside_active}` : style.burger_aside
           }></div>
-        <Link to='/'><img className='w-[250px]' src="/img/Logo/Logo.png" alt="logo" /></Link>
+        <Link to="/">
+          <img className="w-[300px]" src="/img/Logo/Logo.png" alt="logo" />
+        </Link>
         <nav className={!openNav || active ? `${style.nav}` : `${style.nav_none}`}>
           <ul className="flex gap-[30px]">
             <li
@@ -75,11 +76,20 @@ const Header = () => {
                 </li>
               </Link>
             </Scroll>
+            <li>
+              <a
+                href="tel:8 (343) 345-94-84"
+                className={`${style.tel_mobile} font-bold w-full hidden`}>
+                8 (343) 345-94-84
+              </a>
+            </li>
           </ul>
         </nav>
-        <div className='flex items-center gap-[15px]'>
+        <div className="flex items-center gap-[15px]">
           <SearchProduct />
-          <a href='tel:8 (343) 345-94-84' className="font-bold w-full">8 (343) 345-94-84</a>
+          <a href="tel:8 (343) 345-94-84" className={`${style.tel_desktop} font-bold w-full`}>
+            8 (343) 345-94-84
+          </a>
         </div>
       </header>
     </>

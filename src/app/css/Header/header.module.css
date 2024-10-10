@@ -74,6 +74,7 @@
     left: 15px;
     top: 50px;
     width: 305px !important;
+    margin-top: 10px;
   }
 
   .dropdown {
@@ -87,4 +88,15 @@
     max-width: 305px !important;
     width: 100%;
   }
+}
+
+@media only screen and (max-width: 520px) {
+  .tel_desktop {
+    @apply hidden;
+  }
+
+  .tel_mobile {
+    display: inline !important;
+  }
+  
 }

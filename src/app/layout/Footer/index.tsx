@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#343A62] flex-col justify-between text-[#fff] min-h-[200px] flex mt-[60px] py-[10px]">
       <div className={style.wrapper}>
-        <div>Logo</div>
+        <Link to="/">
+          <img className="w-[300px]" src="/img/Logo/Logo.png" alt="logo" />
+        </Link>
         <nav className={style.nav}>
           <ul className="flex gap-[30px]">
             <li className="text-[14px] cursor-pointer hover:text-blue transition">
@@ -41,13 +43,15 @@ const Footer = () => {
           </Scroll>
         </button>
         <ul className="flex flex-col gap-[5px]">
-          <li className="font-bold"><a href='tel:8 (343) 345-94-84'>8 (343) 345-94-84</a></li>
+          <li className="font-bold">
+            <a href="tel:8 (343) 345-94-84">8 (343) 345-94-84</a>
+          </li>
           <li className="text-[14px]">г. Екатеринбург, ул. Татищева, 53</li>
           <li className="text-[14px]">e-mail: info@uralpromzentr.com    </li>
         </ul>
       </div>
       <p className="text-center text-[10px] mt-[15px]">
-          © {new Date().getFullYear()} Уральский промышленный центр. <br /> Все права защищены.
+        © {new Date().getFullYear()} Уральский промышленный центр. <br /> Все права защищены.
       </p>
     </footer>
   );
