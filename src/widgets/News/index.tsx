@@ -33,7 +33,7 @@ const News = () => {
             <div
               onClick={() => navigate(`/news/${newsItem.id}`)}
               className="w-full max-w-[340px] h-[260px] rounded-[8px] overflow-hidden relative cursor-pointer">
-              <img className="w-full h-full object-cover" src='./img/others/test.jpg' alt="news" />
+              <img className="w-full h-full object-cover" src='./img/others/news.jpg' alt="news" />
               <p className={style.date}>{newsItem.created_at}</p>
             </div>
             <p className="font-[600] mt-[10px] text-[18px]">{newsItem.name}</p>
