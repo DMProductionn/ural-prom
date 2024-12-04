@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet';
 import style from '../app/css/Home/home.module.css';
 import SwitchCatalog from '../features/SwitchCatalog';
 import News from '../widgets/News';
-import Slider from '../widgets/Slider';
 
 const Home = () => {
   return (
@@ -13,7 +12,6 @@ const Home = () => {
         </h1>
         <SwitchCatalog />
       </div>
-      <Slider />
       <News />
       <Helmet>
         <title>Уральский Промышленный Центр</title>
